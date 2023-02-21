@@ -30,5 +30,5 @@ $plugin->requires  = 2022041902;
 // Full name of the plugin (used for diagnostics).
 $plugin->component = 'tinymce_kalturamedia';
 $plugin->dependencies = array(
-    'local_kaltura' => 2022041904
+    'local_kaltura' => 2022041905
 );
