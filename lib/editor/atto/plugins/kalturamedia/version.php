@@ -29,5 +29,5 @@ $plugin->release = 'Kaltura release 4.4.4';
 $plugin->requires  = 2022041902;        // Requires this Moodle version.
 $plugin->component = 'atto_kalturamedia';  // Full name of the plugin (used for diagnostics).
 $plugin->dependencies = array(
-    'local_kaltura' => 2022041904
+    'local_kaltura' => 2022041905
 );
