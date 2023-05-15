@@ -1,0 +1,14 @@
+component: tiny_kalturamedia
+name: Embed Kaltura Media
+release: "Kaltura release 4.4.4"
+copyright: 2023 SWITCH <info@switch.ch>
+features:
+  settings: false
+privacy:
+  haspersonaldata: false
+  uselegacypolyfill: false
+tiny_features:
+  buttons:
+    - name: kalturamedia
+      category:  content
+      text: Embed
