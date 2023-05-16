@@ -28,3 +28,4 @@ defined('MOODLE_INTERNAL') || die();
 $string['button_kalturamedia'] = 'Embed';
 $string['pluginname'] = 'Embed Kaltura Media';
 $string['privacy:metadata'] = 'Embed Kaltura Media does not store any personal data';
+$string['kalturamedia:insert'] = 'Insert media from Kaltura in TinyMCE editor';

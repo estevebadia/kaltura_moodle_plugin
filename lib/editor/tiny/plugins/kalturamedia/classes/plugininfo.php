@@ -44,7 +44,8 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_conf
         ?\editor_tiny\editor $editor = null
     ): array {
         return [
-            'contextid' => $context->id
+            'contextid' => $context->id,
+            'enabled' => has_capability('tiny/kalturamedia:insert', $context)
         ];
     }
 }
