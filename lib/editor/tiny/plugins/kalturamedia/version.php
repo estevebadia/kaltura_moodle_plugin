@@ -18,15 +18,16 @@
  * Plugin version and other meta-data are defined here.
  *
  * @package     tiny_kalturamedia
- * @copyright   2023 SWITCH <info@switch.ch>
+ * @copyright   2023 Roi Levi <roi.levi@kaltura.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
+$plugin->version = 2023042400;
+$plugin->release = 'Kaltura release 4.4.6';
+$plugin->requires  = 2023042400;
 $plugin->component = 'tiny_kalturamedia';
-$plugin->release = 'Kaltura release 4.4.5';
-$plugin->version = 2023051100;
 $plugin->dependencies = array(
-    'local_kaltura' => 2022112801
+    'local_kaltura' => 2023042400
 );
