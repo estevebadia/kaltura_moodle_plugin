@@ -594,6 +594,20 @@ function local_kaltura_lti1p3_get_launch_data($module, $withblocks, $editor = nu
 	$serviceurl = new moodle_url('/local/kaltura/service.php');
 	$requestparams['lis_outcome_service_url'] = $serviceurl->out(false);
 
+    // Allow request params to be updated by sub-plugins. The core LTI mod plugin
+    // has this feature and it has been dropped by Kaltura. This fork re-enables
+    // the feature so the user id parameter (JWT "sub" claim) can be modified from
+    // the switch_config plugin.
+    $plugins = core_component::get_plugin_list('ltisource');
+    foreach (array_keys($plugins) as $plugin) {
+        $pluginparams = component_callback('ltisource_'.$plugin, 'before_launch',
+            array($instance, $endpoint, $requestparams), array());
+
+        if (!empty($pluginparams) && is_array($pluginparams)) {
+            $requestparams = array_merge($requestparams, $pluginparams);
+        }
+    }
+
 	if ((!empty($key) && !empty($secret)) || ($ltiversion === LTI_VERSION_1P3)) {
 		if ($ltiversion !== LTI_VERSION_1P3) {
 			$parms = lti_sign_parameters($requestparams, $endpoint, 'POST', $key, $secret);
