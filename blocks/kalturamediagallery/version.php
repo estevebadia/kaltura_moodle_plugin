@@ -16,7 +16,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->version   = 2023042400;
 $plugin->release = 'Kaltura release 4.4.6';
-$plugin->requires  = 2023042400;
+$plugin->requires  = 2022112800;
 $plugin->component = 'block_kalturamediagallery';
 $plugin->dependencies = array(
     'local_kaltura' => 2023042400,

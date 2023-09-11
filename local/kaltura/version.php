@@ -28,7 +28,7 @@ if (!defined('MOODLE_INTERNAL')) {
 $plugin->version = 2023042400;
 $plugin->component = 'local_kaltura';
 $plugin->release = 'Kaltura release 4.4.6';
-$plugin->requires = 2023042400;
+$plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_STABLE;
 
 try {
