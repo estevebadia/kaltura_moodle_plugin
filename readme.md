@@ -20,13 +20,13 @@ If you can't wait for these fixes to be merged in the original plugin, you can u
 ```bash
 $ git clone https://github.com/estevebadia/kaltura_moodle_plugin.git -b [MOODLE_311_DEV|MOODLE_402_DEV|MOODLE_502_DEV]
 ```
-2a. Replace the files of the kaltura plugins. If `MOODLE_PATH` is the public folder of your Moodle installation, run the following command:
+2. (a) Replace the files of the kaltura plugins. If `MOODLE_PATH` is the public folder of your Moodle installation, run the following command:
 ```bash
 $ cp -rv kaltura_moodle_plugin/*/ MOODLE_PATH/
 ```
 Note that from Moodle 5.0 this folder is the `public` folder inside the Moodle installation, while for previous versions is the root folder of the Moodle installation.
 
-2b. (Only 4.x) If you're only interested in the new TinyMCE 6 plugin for Moodle 4.x, you can just copy the `/kaltura_moodle_plugin/lib/editor/tiny/plugins/kalturamedia` folder and keep the rest of the official kaltura plugin.
+2. (b) (Only 4.x) If you're only interested in the new TinyMCE 6 plugin for Moodle 4.x, you can just copy the `/kaltura_moodle_plugin/lib/editor/tiny/plugins/kalturamedia` folder and keep the rest of the official kaltura plugin.
 
 3. (Only 4.x) Depending on the HTML Editors you have in your system you may need to delete the TinyMCE (legacy) plugin (folder `lib/editor/tinymce`) or the TinyMCE 6 plugin (folder `lib/editor/tiny`). Otherwise the Moodle will complain about a missing dependency.
 
@@ -49,5 +49,5 @@ Moodle 4.x
 https://github.com/kaltura/moodle_plugin/compare/MOODLE_401_DEV...estevebadia:kaltura_moodle_plugin:MOODLE_402_DEV
 
 Moodle 5.x
-https://github.com/kaltura/moodle_plugin/compare/MOODLE_501_DEV...estevebadia:kaltura_moodle_plugin:MOODLE_502_DEV
+https://github.com/kaltura/moodle_plugin/compare/MOODLE_501_DEV...estevebadia:kaltura_moodle_plugin:MOODLE_501_DEV
 
