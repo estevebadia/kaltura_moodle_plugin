@@ -287,9 +287,6 @@ function kalvidassign_supports($feature) {
         case FEATURE_BACKUP_MOODLE2:
             return true;
             break;
-        case FEATURE_ADVANCED_GRADING:
-            return true;
-            break;
         case FEATURE_MOD_PURPOSE:
             return MOD_PURPOSE_ASSESSMENT;
             break;
