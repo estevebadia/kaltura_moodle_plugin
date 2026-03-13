@@ -13,24 +13,23 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Kaltura version script
+ * Kaltura video embedding Tiny editor plugin capabilities.
  *
- * @package    mod_kalvidassign
- * @author     Remote-Learner.net Inc
+ * @package    tiny_kalturamedia
+ * @author     https://github.com/estevebadia
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @copyright  (C) 2014 Remote Learner.net Inc http://www.remote-learner.net
+ * @copyright  (C) 2022 switch.ch
  */
 
-if (!defined('MOODLE_INTERNAL')) {
-    die('Direct access to this script is forbidden.');
-}
-
-$plugin->version = 2026010600;
-$plugin->component  = 'mod_kalvidassign';
-$plugin->release    = 'Kaltura release 4.5.3';
-$plugin->requires  = 2025041400;
-$plugin->cron       = 0;
-$plugin->maturity = MATURITY_STABLE;
-$plugin->dependencies = array(
-    'local_kaltura' => 2026010600,
+$capabilities = array(
+  'tiny/kalturamedia:insert' => array(
+    'captype' => 'write',
+    'contextlevel' => CONTEXT_COURSE,
+    'archetypes' => array(
+      'student' => CAP_ALLOW,
+      'teacher' => CAP_ALLOW,
+      'editingteacher' => CAP_ALLOW,
+      'manager' => CAP_ALLOW,
+    ),
+  ),
 );

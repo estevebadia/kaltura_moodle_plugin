@@ -415,6 +415,16 @@ function local_kaltura_request_lti_launch($ltirequest, $withblocks = true, $edit
 
     $requestparams['roles'] = local_kaltura_modify_role($requestparams['roles'] ?? KALTURA_LTI_LEARNER_ROLE);
 
+    // Call plugins of type ltisource providing the before_launch hook
+    // implementation the same way it is done by Moodle's LTI mod.
+    $callbacks = get_plugin_list_with_function('ltisource', 'before_launch');
+    foreach ($callbacks as $plugin => $function) {
+        $pluginparams = component_callback($plugin, 'before_launch', [$lti, $endpoint, $requestparams], []);
+        if (!empty($pluginparams) && is_array($pluginparams)) {
+            $requestparams = array_merge($requestparams, $pluginparams);
+        }
+    }
+
     $params = lti_sign_parameters($requestparams, $endpoint, 'POST', $lti->resourcekey, $lti->password);
 
     local_kaltura_strip_querystring($endpoint, $params);
@@ -592,6 +602,20 @@ function local_kaltura_lti1p3_get_launch_data($module, $withblocks, $editor = nu
 	$requestparams['lis_outcome_service_url'] = $serviceurl->out(false);
 
     $requestparams['roles'] = local_kaltura_modify_role($requestparams['roles'] ?? KALTURA_LTI_LEARNER_ROLE);
+
+    // Allow request params to be updated by sub-plugins. The core LTI mod plugin
+    // has this feature and it has been dropped by Kaltura. This fork re-enables
+    // the feature so the user id parameter (JWT "sub" claim) can be modified from
+    // the switch_config plugin.
+    $plugins = core_component::get_plugin_list('ltisource');
+    foreach (array_keys($plugins) as $plugin) {
+        $pluginparams = component_callback('ltisource_'.$plugin, 'before_launch',
+            array($instance, $endpoint, $requestparams), array());
+
+        if (!empty($pluginparams) && is_array($pluginparams)) {
+            $requestparams = array_merge($requestparams, $pluginparams);
+        }
+    }
 
 	if ((!empty($key) && !empty($secret)) || ($ltiversion === LTI_VERSION_1P3)) {
 		if ($ltiversion !== LTI_VERSION_1P3) {
