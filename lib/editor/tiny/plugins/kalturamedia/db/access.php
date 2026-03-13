@@ -13,9 +13,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Kaltura video embedding TinyMCE button accesslib.
+ * Kaltura video embedding Tiny editor plugin capabilities.
  *
- * @package    tinymce_kalturamedia
+ * @package    tiny_kalturamedia
  * @author     https://github.com/estevebadia
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @copyright  (C) 2022 switch.ch

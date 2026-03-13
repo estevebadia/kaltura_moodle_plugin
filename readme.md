@@ -1,14 +1,14 @@
 # Kaltura Moodle Plugin Fork
 This repository is a fork of the original Kaltura Moodle Plugin at https://github.com/kaltura/moodle_plugin
 
-This fork addresses 4 issues that have been reported, provided pull requests and waiting for merge in original code:
+This fork addresses four upstream issues for which fixes have been proposed but have not yet been merged into the original plugin:
 
   - **Add capabilities to control the Kaltura button in HTML editors** (https://github.com/kaltura/moodle_plugin/pull/379)
   - **Fix UX issue with submit capability in kaltura assignment** (https://github.com/kaltura/moodle_plugin/pull/380)
   - **Allow plugins of type ltisource to update LTI launch parameters** (https://github.com/kaltura/moodle_plugin/issues/367)
   - **Kaltura plugin for TinyMCE 6 (for Moodle 4 branch)**
 
-If you can't wait for this fixes to be merged in the original plugin, you can use the code on this repository. Note that the only branches that are updated with the fixes are:
+If you can't wait for these fixes to be merged in the original plugin, you can use the code in this repository. Note that the only branches that are updated with the fixes are:
 
  - MOODLE_311_DEV (Use for Moodle 3.x)
  - MOODLE_402_DEV (Use for Moodle 4.x)
@@ -16,7 +16,7 @@ If you can't wait for this fixes to be merged in the original plugin, you can us
 
 ## Installation
 
-1. Clone the repository in your server, providing the 3.x or 4.x branch.
+1. Clone the repository in your server, providing the 3.x, 4.x or 5.x branch that matches your Moodle version.
 ```bash
 $ git clone https://github.com/estevebadia/kaltura_moodle_plugin.git -b [MOODLE_311_DEV|MOODLE_402_DEV|MOODLE_502_DEV]
 ```
