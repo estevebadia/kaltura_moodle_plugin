@@ -12,13 +12,13 @@ If you can't wait for these fixes to be merged in the original plugin, you can u
 
  - MOODLE_311_DEV (Use for Moodle 3.x)
  - MOODLE_402_DEV (Use for Moodle 4.x)
- - MOODLE_502_DEV (Use for Moodle 5.x)
+ - MOODLE_501_DEV (Use for Moodle 5.x)
 
 ## Installation
 
 1. Clone the repository in your server, providing the 3.x, 4.x or 5.x branch that matches your Moodle version.
 ```bash
-$ git clone https://github.com/estevebadia/kaltura_moodle_plugin.git -b [MOODLE_311_DEV|MOODLE_402_DEV|MOODLE_502_DEV]
+$ git clone https://github.com/estevebadia/kaltura_moodle_plugin.git -b [MOODLE_311_DEV|MOODLE_402_DEV|MOODLE_501_DEV]
 ```
 2. (a) Replace the files of the kaltura plugins. If `MOODLE_PATH` is the public folder of your Moodle installation, run the following command:
 ```bash
